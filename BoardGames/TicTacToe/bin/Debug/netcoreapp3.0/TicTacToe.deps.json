@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v3.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v3.0": {
+      "TicTacToe/1.0.0": {
+        "dependencies": {
+          "BoardGames": "1.0.0"
+        },
+        "runtime": {
+          "TicTacToe.dll": {}
+        }
+      },
+      "BoardGames/1.0.0": {
+        "runtime": {
+          "BoardGames.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "TicTacToe/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "BoardGames/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
