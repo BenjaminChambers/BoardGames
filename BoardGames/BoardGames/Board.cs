@@ -24,6 +24,21 @@ namespace BoardGames
                 _cells[Index] = Value;
         }
 
+        public T this[int Index]
+            => Cells[Index];
+        public T this[int Column, int Row]
+            => Cells[Row*Width + Column];
+        public IEnumerable<T> Row(int RowNumber)
+        {
+            for (int i = RowNumber * Width; i < (RowNumber + 1) * Width; i++)
+                yield return this[i];
+        }
+        public IEnumerable<T> Column(int ColumnNumber)
+        {
+            for (int i = ColumnNumber; i < Width * Height; i += Width)
+                yield return this[i];
+        }
+
         public readonly int Width;
         public readonly int Height;
         public IReadOnlyList<T> Cells;
