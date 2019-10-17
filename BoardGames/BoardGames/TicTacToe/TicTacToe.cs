@@ -10,6 +10,9 @@ namespace BoardGames.TicTacToe
             : base(3, 3) { }
         public TicTacToe(TicTacToe Source)
             : base(Source) { }
+        public TicTacToe(IEnumerable<TicTacMove> Source)
+            : base(3, 3, Source) { }
+
         private TicTacToe(TicTacToe Source, IEnumerable<(int Index, TicTacMove Value)> Changes)
             : base(Source, Changes) { }
 
