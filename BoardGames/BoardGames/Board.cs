@@ -23,6 +23,13 @@ namespace BoardGames
             foreach (var (Index, Value) in Changes)
                 _cells[Index] = Value;
         }
+        protected Board(int Width, int Height, IEnumerable<T> Values)
+            : this(Width, Height)
+        {
+            int i = 0;
+            foreach (var val in Values)
+                _cells[i++] = val;
+        }
 
         public T this[int Index]
             => Cells[Index];
@@ -41,7 +48,8 @@ namespace BoardGames
 
         public readonly int Width;
         public readonly int Height;
-        public IReadOnlyList<T> Cells;
+        public IReadOnlyList<T> Cells
+            => _cells;
 
         private T[] _cells;
     }
