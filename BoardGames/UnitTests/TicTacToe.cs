@@ -7,75 +7,76 @@ namespace UnitTests
     [TestClass]
     public class TicTacToe
     {
-        TicTacMove[] Empty =
+        readonly XO[] Empty =
             {
-            TicTacMove.Empty, TicTacMove.Empty, TicTacMove.Empty,
-            TicTacMove.Empty, TicTacMove.Empty, TicTacMove.Empty,
-            TicTacMove.Empty, TicTacMove.Empty, TicTacMove.Empty
+            XO.Empty, XO.Empty, XO.Empty,
+            XO.Empty, XO.Empty, XO.Empty,
+            XO.Empty, XO.Empty, XO.Empty
         };
-        TicTacMove[] Tie =
+        readonly XO[] Tie =
         {
-            TicTacMove.O, TicTacMove.X, TicTacMove.O,
-            TicTacMove.X, TicTacMove.O, TicTacMove.X,
-            TicTacMove.X, TicTacMove.O, TicTacMove.X
+            XO.O, XO.X, XO.O,
+            XO.X, XO.O, XO.X,
+            XO.X, XO.O, XO.X
         };
-        TicTacMove[] OWinRow1 =
+        readonly XO[] OWinRow1 =
         {
-            TicTacMove.O, TicTacMove.O, TicTacMove.O,
-            TicTacMove.Empty, TicTacMove.X, TicTacMove.Empty,
-            TicTacMove.X, TicTacMove.X, TicTacMove.Empty
+            XO.O, XO.O, XO.O,
+            XO.Empty, XO.X, XO.Empty,
+            XO.X, XO.X, XO.Empty
         };
-        TicTacMove[] OWinRow2 =
+        readonly XO[] OWinRow2 =
                 {
-            TicTacMove.X, TicTacMove.Empty, TicTacMove.Empty,
-            TicTacMove.O, TicTacMove.O, TicTacMove.O,
-            TicTacMove.X, TicTacMove.Empty, TicTacMove.X
+            XO.X, XO.Empty, XO.Empty,
+            XO.O, XO.O, XO.O,
+            XO.X, XO.Empty, XO.X
         };
-        TicTacMove[] OWinRow3 =
+        readonly XO[] OWinRow3 =
         {
-            TicTacMove.X, TicTacMove.Empty, TicTacMove.Empty,
-            TicTacMove.X, TicTacMove.X, TicTacMove.Empty,
-            TicTacMove.O, TicTacMove.O, TicTacMove.O
+            XO.X, XO.Empty, XO.Empty,
+            XO.X, XO.X, XO.Empty,
+            XO.O, XO.O, XO.O
         };
-        TicTacMove[] XWinColumn1 =
+        readonly XO[] XWinColumn1 =
         {
-            TicTacMove.X, TicTacMove.O, TicTacMove.Empty,
-            TicTacMove.X, TicTacMove.O, TicTacMove.Empty,
-            TicTacMove.X, TicTacMove.Empty, TicTacMove.Empty
+            XO.X, XO.O, XO.Empty,
+            XO.X, XO.O, XO.Empty,
+            XO.X, XO.Empty, XO.Empty
         };
-        TicTacMove[] XWinColumn2 =
+        readonly XO[] XWinColumn2 =
         {
-            TicTacMove.Empty, TicTacMove.X, TicTacMove.O,
-            TicTacMove.Empty, TicTacMove.X, TicTacMove.Empty,
-            TicTacMove.O, TicTacMove.X, TicTacMove.Empty
+            XO.Empty, XO.X, XO.O,
+            XO.Empty, XO.X, XO.Empty,
+            XO.O, XO.X, XO.Empty
         };
-        TicTacMove[] XWinColumn3 =
+        readonly XO[] XWinColumn3 =
         {
-            TicTacMove.Empty, TicTacMove.Empty, TicTacMove.X,
-            TicTacMove.O, TicTacMove.O, TicTacMove.X,
-            TicTacMove.Empty, TicTacMove.Empty, TicTacMove.X
+            XO.Empty, XO.Empty, XO.X,
+            XO.O, XO.O, XO.X,
+            XO.Empty, XO.Empty, XO.X
         };
-        TicTacMove[] OWinDiagonalDown =
+        readonly XO[] OWinDiagonalDown =
         {
-            TicTacMove.O, TicTacMove.X, TicTacMove.X,
-            TicTacMove.Empty, TicTacMove.O, TicTacMove.Empty,
-            TicTacMove.X, TicTacMove.Empty, TicTacMove.O
+            XO.O, XO.X, XO.X,
+            XO.Empty, XO.O, XO.Empty,
+            XO.X, XO.Empty, XO.O
         };
-        TicTacMove[] XWinDiagonalUp =
+        readonly XO[] XWinDiagonalUp =
         {
-            TicTacMove.O, TicTacMove.O, TicTacMove.X,
-            TicTacMove.Empty, TicTacMove.X, TicTacMove.Empty,
-            TicTacMove.X, TicTacMove.Empty, TicTacMove.Empty
+            XO.O, XO.O, XO.X,
+            XO.Empty, XO.X, XO.Empty,
+            XO.X, XO.Empty, XO.Empty
         };
 
         [TestMethod]
         public void TestConstructors()
         {
-            void TestConstruction(TicTacMove[] Source)
+            static void TestConstruction(XO[] Source)
                 => Util.CompareEnum(Source, new BoardGames.TicTacToe.TicTacToe(Source).Cells);
 
             Util.CompareEnum(Empty, new BoardGames.TicTacToe.TicTacToe().Cells);
             TestConstruction(Empty);
+            TestConstruction(Tie);
             TestConstruction(OWinRow1);
             TestConstruction(OWinRow2);
             TestConstruction(OWinRow3);
@@ -89,7 +90,7 @@ namespace UnitTests
         [TestMethod]
         public void TestRows()
         {
-            void TestRow(TicTacMove[] Source)
+            static void TestRow(XO[] Source)
             {
                 var b = new BoardGames.TicTacToe.TicTacToe(Source);
                 Util.CompareEnum(b.Row(0), Source.Take(3));
@@ -98,6 +99,7 @@ namespace UnitTests
             }
 
             TestRow(Empty);
+            TestRow(Tie);
             TestRow(OWinRow1);
             TestRow(OWinRow2);
             TestRow(OWinRow3);
@@ -111,7 +113,7 @@ namespace UnitTests
         [TestMethod]
         public void TestColumns()
         {
-            void TestColumn(TicTacMove[] Source)
+            static void TestColumn(XO[] Source)
             {
                 var b = new BoardGames.TicTacToe.TicTacToe(Source);
                 Util.CompareEnum(b.Column(0), new[] { Source[0], Source[3], Source[6] });
@@ -120,6 +122,7 @@ namespace UnitTests
             }
 
             TestColumn(Empty);
+            TestColumn(Tie);
             TestColumn(OWinRow1);
             TestColumn(OWinRow2);
             TestColumn(OWinRow3);

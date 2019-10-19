@@ -9,9 +9,9 @@ namespace TicTacToe
     class TicTacValueConverter : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
-            => (BoardGames.TicTacToe.TicTacMove)value switch {
-            BoardGames.TicTacToe.TicTacMove.X => "X",
-            BoardGames.TicTacToe.TicTacMove.O => "O",
+            => (BoardGames.TicTacToe.XO)value switch {
+            BoardGames.TicTacToe.XO.X => "X",
+            BoardGames.TicTacToe.XO.O => "O",
             _ => string.Empty
             };
 
