@@ -30,11 +30,50 @@ namespace BoardGames
             foreach (var val in Values)
                 _cells[i++] = val;
         }
+        protected Board(Board<T> Source, int ClockwiseRotations)
+            : this((ClockwiseRotations % 2 == 0) ? Source.Width : Source.Height, (ClockwiseRotations % 2 == 0) ? Source.Height:Source.Width)
+        {
+            var rot = ClockwiseRotations % 4;
+            if (rot < 0)
+                rot += 4;
+
+            for (int x = 0; x < Width; x++)
+            {
+                for (int y = 0; y < Height; y++)
+                {
+                    _cells[y * Width + x] = rot switch
+                    {
+                        0 => Source[x,y],
+                        1 => Source[y, Width - 1 - x],
+                        2 => Source[Width-1-x, Height-1-y],
+                        3 => Source[Height - 1 - y, x],
+                        _ => throw new InvalidOperationException("How the hell did that happen?")
+                    };
+                }
+            }
+        }
+        protected Board(Board<T> Source, bool FlipHorizontal, bool FlipVertical)
+            : this(Source.Width, Source.Height)
+        {
+            for (int i = 0; i < Width; i++)
+            {
+                for (int j = 0; j < Height; j++)
+                {
+                    _cells[j * Width + i] = (FlipHorizontal, FlipVertical) switch
+                    {
+                        (false, false) => Source[i, j],
+                        (false, true) => Source[i, Height - 1 - j],
+                        (true, false) => Source[Width - 1 - i, j],
+                        (true, true) => Source[Width - 1 - i, Height - 1 - j]
+                    };
+                }
+            }
+        }
 
         public T this[int Index]
             => Cells[Index];
         public T this[int Column, int Row]
-            => Cells[Row*Width + Column];
+            => Cells[Row * Width + Column];
         public IEnumerable<T> Row(int RowNumber)
         {
             for (int i = RowNumber * Width; i < (RowNumber + 1) * Width; i++)

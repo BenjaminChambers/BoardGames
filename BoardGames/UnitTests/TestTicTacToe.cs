@@ -5,7 +5,7 @@ using System.Linq;
 namespace UnitTests
 {
     [TestClass]
-    public class TicTacToe
+    public class TestTicTacToe
     {
         readonly XO[] Empty =
             {
@@ -115,7 +115,7 @@ namespace UnitTests
         {
             static void TestColumn(XO[] Source)
             {
-                var b = new BoardGames.TicTacToe.TicTacToe(Source);
+                var b = new TicTacToe(Source);
                 Util.CompareEnum(b.Column(0), new[] { Source[0], Source[3], Source[6] });
                 Util.CompareEnum(b.Column(1), new[] { Source[1], Source[4], Source[7] });
                 Util.CompareEnum(b.Column(2), new[] { Source[2], Source[5], Source[8] });
@@ -131,6 +131,70 @@ namespace UnitTests
             TestColumn(XWinColumn3);
             TestColumn(OWinDiagonalDown);
             TestColumn(XWinDiagonalUp);
+        }
+
+        [TestMethod]
+        public void TestFlip()
+        {
+            static void Test(XO[] Source)
+            {
+                static void TestBoard(TicTacToe Original, TicTacToe Transformed, int[] Locations)
+                    => Util.CompareEnum(Transformed.Cells, from x in Locations select Original[x]);
+
+                var src = new TicTacToe(Source);
+                TestBoard(src, src.Flip(false, false), new[] { 0, 1, 2, 3, 4, 5, 6, 7, 8 });
+                TestBoard(src, src.Flip(false, true), new[] { 6, 7, 8, 3, 4, 5, 0, 1, 2 });
+                TestBoard(src, src.Flip(true, false), new[] { 2, 1, 0, 5, 4, 3, 8, 7, 6 });
+                TestBoard(src, src.Flip(true, true), new[] { 8, 7, 6, 5, 4, 3, 2, 1, 0 });
+            }
+
+            Test(Empty);
+            Test(Tie);
+            Test(OWinRow1);
+            Test(OWinRow2);
+            Test(OWinRow3);
+            Test(XWinColumn1);
+            Test(XWinColumn2);
+            Test(XWinColumn3);
+            Test(OWinDiagonalDown);
+            Test(XWinDiagonalUp);
+        }
+
+        [TestMethod]
+        public void TestRotate()
+        {
+            static void Test(XO[] Source)
+            {
+                static void TestBoard(TicTacToe Original, TicTacToe Transformed, int[] Locations)
+                    => Util.CompareEnum(Transformed.Cells, from x in Locations select Original[x]);
+
+                var src = new TicTacToe(Source);
+
+                var answers = new[]
+                {
+                    new[] { 0, 1, 2, 3, 4, 5, 6, 7, 8 },
+                    new[] { 6, 3, 0, 7, 4, 1, 8, 5, 2 },
+                    new[] { 8, 7, 6, 5, 4, 3, 2, 1, 0 },
+                    new[] { 2, 5, 8, 1, 4, 7, 0, 3, 6 }
+                };
+
+                for (int i = -1; i < 10; i++)
+                {
+                    for (int offset = 0; offset < 4; offset++)
+                        TestBoard(src, src.Rotate(i * 4 + offset), answers[offset]);
+                }
+            }
+
+            Test(Empty);
+            Test(Tie);
+            Test(OWinRow1);
+            Test(OWinRow2);
+            Test(OWinRow3);
+            Test(XWinColumn1);
+            Test(XWinColumn2);
+            Test(XWinColumn3);
+            Test(OWinDiagonalDown);
+            Test(XWinDiagonalUp);
         }
     }
 }

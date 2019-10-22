@@ -11,8 +11,22 @@ namespace BoardGames.TicTacToe
         public TicTacToe(IEnumerable<XO> Source)
             : base(3, 3, Source) { }
 
+
+
         private TicTacToe(TicTacToe Source, IEnumerable<(int Index, XO Value)> Changes)
             : base(Source, Changes) { }
+        private TicTacToe(TicTacToe Source, bool FlipHorizontal, bool FlipVertical)
+            : base(Source, FlipHorizontal, FlipVertical) { }
+        private TicTacToe(TicTacToe Source, int ClockwiseRotations)
+            : base(Source, ClockwiseRotations) { }
+
+
+        public TicTacToe Rotate(int Clockwise)
+            => new TicTacToe(this, Clockwise);
+        public TicTacToe Flip(bool Horizontal, bool Vertical)
+            => new TicTacToe(this, Horizontal, Vertical);
+
+
 
         public TicTacToe Play(int Index)
         {
