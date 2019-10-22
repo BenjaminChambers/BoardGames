@@ -31,7 +31,7 @@ namespace BoardGames
                 _cells[i++] = val;
         }
         protected Board(Board<T> Source, int ClockwiseRotations)
-            : this((ClockwiseRotations % 2 == 0) ? Source.Width : Source.Height, (ClockwiseRotations % 2 == 0) ? Source.Height:Source.Width)
+            : this((ClockwiseRotations % 2 == 0) ? Source.Width : Source.Height, (ClockwiseRotations % 2 == 0) ? Source.Height : Source.Width)
         {
             var rot = ClockwiseRotations % 4;
             if (rot < 0)
@@ -43,9 +43,9 @@ namespace BoardGames
                 {
                     _cells[y * Width + x] = rot switch
                     {
-                        0 => Source[x,y],
+                        0 => Source[x, y],
                         1 => Source[y, Width - 1 - x],
-                        2 => Source[Width-1-x, Height-1-y],
+                        2 => Source[Width - 1 - x, Height - 1 - y],
                         3 => Source[Height - 1 - y, x],
                         _ => throw new InvalidOperationException("How the hell did that happen?")
                     };
@@ -71,9 +71,11 @@ namespace BoardGames
         }
 
         public T this[int Index]
-            => Cells[Index];
+            => All[Index];
+        public IReadOnlyList<T> All
+            => _cells;
         public T this[int Column, int Row]
-            => Cells[Row * Width + Column];
+            => All[Row * Width + Column];
         public IEnumerable<T> Row(int RowNumber)
         {
             for (int i = RowNumber * Width; i < (RowNumber + 1) * Width; i++)
@@ -85,11 +87,69 @@ namespace BoardGames
                 yield return this[i];
         }
 
+        public IEnumerable<Run<T>> Runs(int minLength, T Value)
+        {
+            foreach (var r in HorizontalRuns(minLength, Value)) yield return r;
+            foreach (var r in VerticalRuns(minLength, Value)) yield return r;
+            foreach (var r in DiagonalRuns(minLength, Value)) yield return r;
+        }
+
+        public IEnumerable<Run<T>> HorizontalRuns(int minLength, T Value)
+        {
+            for (int r = 0; r < Height; r++)
+            {
+                int runLength = 0;
+                for (int x = 0; x < Width; x++)
+                {
+                    if (this[x, r].Equals(Value))
+                        runLength++;
+                    else
+                    {
+                        if (runLength>minLength)
+                        {
+                            yield return new Run<T>() { StartRow = r, EndRow = r, StartColumn = x - runLength - 1, EndColumn = x - 1 };
+                            runLength = 0;
+                        }
+                    }
+                }
+                if (runLength>minLength)
+                    yield return new Run<T>() { StartRow = r, EndRow = r, StartColumn = Width - runLength - 1, EndColumn = Width - 1 };
+            }
+        }
+        public IEnumerable<Run<T>> VerticalRuns(int minLength, T Value)
+        {
+            for (int c = 0; c < Width; c++)
+            {
+                int runLength = 0;
+                for (int x = 0; x < Height; x++)
+                {
+                    if (this[c, x].Equals(Value))
+                        runLength++;
+                    else
+                    {
+                        if (runLength > minLength)
+                        {
+                            yield return new Run<T>() { StartColumn = c, EndColumn = c, StartRow = x - runLength - 1, EndRow = x - 1 };
+                            runLength = 0;
+                        }
+                    }
+                }
+                if (runLength > minLength)
+                    yield return new Run<T>() { StartColumn = c, EndColumn = c, StartRow = Height - runLength - 1, EndRow = Height - 1 };
+            }
+        }
+        public IEnumerable<Run<T>> DiagonalRuns(int minLength, T Value)
+        {
+            foreach (var r in DiagonalRunUp(minLength, Value)) yield return r;
+            foreach (var r in DiagonalRunDown(minLength, Value)) yield return r;
+        }
+        private IEnumerable<Run<T>> DiagonalRunUp(int minLength, T Value) => throw new NotImplementedException();
+        private IEnumerable<Run<T>> DiagonalRunDown(int minLength, T Value) => throw new NotImplementedException();
+
+
         public readonly int Width;
         public readonly int Height;
-        public IReadOnlyList<T> Cells
-            => _cells;
 
-        private T[] _cells;
+        readonly private T[] _cells;
     }
 }
