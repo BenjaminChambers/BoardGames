@@ -105,14 +105,14 @@ namespace BoardGames
                         runLength++;
                     else
                     {
-                        if (runLength>minLength)
+                        if (runLength>=minLength)
                         {
                             yield return new Run<T>() { StartRow = r, EndRow = r, StartColumn = x - runLength - 1, EndColumn = x - 1 };
-                            runLength = 0;
                         }
+                        runLength = 0;
                     }
                 }
-                if (runLength>minLength)
+                if (runLength>=minLength)
                     yield return new Run<T>() { StartRow = r, EndRow = r, StartColumn = Width - runLength - 1, EndColumn = Width - 1 };
             }
         }
@@ -130,8 +130,8 @@ namespace BoardGames
                         if (runLength > minLength)
                         {
                             yield return new Run<T>() { StartColumn = c, EndColumn = c, StartRow = x - runLength - 1, EndRow = x - 1 };
-                            runLength = 0;
                         }
+                        runLength = 0;
                     }
                 }
                 if (runLength > minLength)
