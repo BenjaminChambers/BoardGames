@@ -127,14 +127,14 @@ namespace BoardGames
                         runLength++;
                     else
                     {
-                        if (runLength > minLength)
+                        if (runLength >= minLength)
                         {
                             yield return new Run<T>() { StartColumn = c, EndColumn = c, StartRow = x - runLength - 1, EndRow = x - 1 };
                         }
                         runLength = 0;
                     }
                 }
-                if (runLength > minLength)
+                if (runLength >= minLength)
                     yield return new Run<T>() { StartColumn = c, EndColumn = c, StartRow = Height - runLength - 1, EndRow = Height - 1 };
             }
         }

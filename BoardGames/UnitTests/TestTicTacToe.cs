@@ -219,5 +219,28 @@ namespace UnitTests
             Test(OWinDiagonalDown, 1, 0, 0);
             Test(XWinDiagonalUp, 0, 1, 1);
         }
+
+        [TestMethod]
+        public void TestVRuns()
+        {
+            static void Test(XO[] Source, int x2, int o2, int e2)
+            {
+                var work = new TicTacToe(Source, XO.X);
+                var r = work.VerticalRuns(2, XO.X); Assert.AreEqual(x2, r.Count());
+                r = work.VerticalRuns(2, XO.O); Assert.AreEqual(o2, r.Count());
+                r = work.VerticalRuns(2, XO.Empty); Assert.AreEqual(e2, r.Count());
+            }
+
+            Test(Empty, 0, 0, 3);
+            Test(Tie, 2, 1, 0);
+            Test(OWinRow1, 1, 0, 1);
+            Test(OWinRow2, 0, 0, 0);
+            Test(OWinRow3, 1, 0, 1);
+            Test(XWinColumn1, 1, 1, 1);
+            Test(XWinColumn2, 1, 0, 2);
+            Test(XWinColumn3, 1, 0, 0);
+            Test(OWinDiagonalDown, 0, 0, 0);
+            Test(XWinDiagonalUp, 0, 0, 1);
+        }
     }
 }
