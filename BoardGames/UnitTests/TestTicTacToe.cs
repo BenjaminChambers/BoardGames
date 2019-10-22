@@ -72,9 +72,9 @@ namespace UnitTests
         public void TestConstructors()
         {
             static void TestConstruction(XO[] Source)
-                => Util.CompareEnum(Source, new BoardGames.TicTacToe.TicTacToe(Source).Cells);
+                => Util.CompareEnum(Source, new TicTacToe(Source, XO.X).All);
 
-            Util.CompareEnum(Empty, new BoardGames.TicTacToe.TicTacToe().Cells);
+            Util.CompareEnum(Empty, new BoardGames.TicTacToe.TicTacToe().All);
             TestConstruction(Empty);
             TestConstruction(Tie);
             TestConstruction(OWinRow1);
@@ -92,7 +92,7 @@ namespace UnitTests
         {
             static void TestRow(XO[] Source)
             {
-                var b = new BoardGames.TicTacToe.TicTacToe(Source);
+                var b = new BoardGames.TicTacToe.TicTacToe(Source, XO.X);
                 Util.CompareEnum(b.Row(0), Source.Take(3));
                 Util.CompareEnum(b.Row(1), Source.Skip(3).Take(3));
                 Util.CompareEnum(b.Row(2), Source.Skip(6));
@@ -115,7 +115,7 @@ namespace UnitTests
         {
             static void TestColumn(XO[] Source)
             {
-                var b = new TicTacToe(Source);
+                var b = new TicTacToe(Source, XO.X);
                 Util.CompareEnum(b.Column(0), new[] { Source[0], Source[3], Source[6] });
                 Util.CompareEnum(b.Column(1), new[] { Source[1], Source[4], Source[7] });
                 Util.CompareEnum(b.Column(2), new[] { Source[2], Source[5], Source[8] });
@@ -139,9 +139,9 @@ namespace UnitTests
             static void Test(XO[] Source)
             {
                 static void TestBoard(TicTacToe Original, TicTacToe Transformed, int[] Locations)
-                    => Util.CompareEnum(Transformed.Cells, from x in Locations select Original[x]);
+                    => Util.CompareEnum(Transformed.All, from x in Locations select Original[x]);
 
-                var src = new TicTacToe(Source);
+                var src = new TicTacToe(Source, XO.X);
                 TestBoard(src, src.Flip(false, false), new[] { 0, 1, 2, 3, 4, 5, 6, 7, 8 });
                 TestBoard(src, src.Flip(false, true), new[] { 6, 7, 8, 3, 4, 5, 0, 1, 2 });
                 TestBoard(src, src.Flip(true, false), new[] { 2, 1, 0, 5, 4, 3, 8, 7, 6 });
@@ -166,9 +166,9 @@ namespace UnitTests
             static void Test(XO[] Source)
             {
                 static void TestBoard(TicTacToe Original, TicTacToe Transformed, int[] Locations)
-                    => Util.CompareEnum(Transformed.Cells, from x in Locations select Original[x]);
+                    => Util.CompareEnum(Transformed.All, from x in Locations select Original[x]);
 
-                var src = new TicTacToe(Source);
+                var src = new TicTacToe(Source, XO.X);
 
                 var answers = new[]
                 {
