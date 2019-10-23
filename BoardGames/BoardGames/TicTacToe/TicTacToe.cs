@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace BoardGames.TicTacToe
@@ -19,17 +20,58 @@ namespace BoardGames.TicTacToe
             : base(3, 3, Source)
         {
             this.Turn = Turn;
+            ProcessBoard();
         }
 
         private TicTacToe(TicTacToe Source, IEnumerable<(int Index, XO Value)> Changes, XO Turn)
-            : base(Source, Changes) => this.Turn = Turn;
+            : base(Source, Changes)
+        {
+            this.Turn = Turn;
+            ProcessBoard();
+        }
         private TicTacToe(TicTacToe Source, bool FlipHorizontal, bool FlipVertical)
-            : base(Source, FlipHorizontal, FlipVertical) => Turn = Source.Turn;
+            : base(Source, FlipHorizontal, FlipVertical)
+        {
+            Turn = Source.Turn;
+            ProcessBoard();
+        }
         private TicTacToe(TicTacToe Source, int ClockwiseRotations)
-            : base(Source, ClockwiseRotations) => Turn = Source.Turn;
+            : base(Source, ClockwiseRotations)
+        {
+            Turn = Source.Turn;
+            ProcessBoard();
+        }
 
         private void ProcessBoard()
         {
+            bool xWins = Runs(3, XO.X).Any();
+            bool oWins = Runs(3, XO.O).Any();
+            bool empties = All.Contains(XO.Empty);
+
+            switch (xWins, oWins, empties)
+            {
+                case (true, false, false):
+                case (true, false, true):
+                    InProgress = false;
+                    Winner = XO.X;
+                    break;
+                case (false, true, false):
+                case (false, true, true):
+                    InProgress = false;
+                    Winner = XO.O;
+                    break;
+                case (true, true, false):
+                case (true, true, true):
+                    throw new InvalidOperationException("Somehow both sides achieved victory.");
+                case (false, false, false):
+                    InProgress = false;
+                    Winner = XO.Empty;
+                    break;
+                case (false, false, true):
+                    InProgress = true;
+                    Winner = XO.Empty;
+                    break;
+            }
         }
         #endregion
 
@@ -44,8 +86,8 @@ namespace BoardGames.TicTacToe
         #region Info
         public readonly XO Turn;
 
-        public readonly bool InProgress;
-        public readonly XO Winner;
+        public bool InProgress { get; private set; }
+        public XO Winner { get; private set; }
 
         #endregion
 

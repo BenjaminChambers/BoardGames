@@ -265,5 +265,27 @@ namespace UnitTests
             Test(OWinDiagonalDown, 0, 1, 2);
             Test(XWinDiagonalUp, 1, 0, 2);
         }
+
+        [TestMethod]
+        public void TestState()
+        {
+            static void Test(XO[] Source, bool InProgress, XO Winner)
+            {
+                var work = new TicTacToe(Source, XO.X);
+                Assert.AreEqual(InProgress, work.InProgress);
+                Assert.AreEqual(Winner, work.Winner);
+            }
+
+            Test(Empty, true, XO.Empty);
+            Test(Tie, false, XO.Empty);
+            Test(OWinRow1, false, XO.O);
+            Test(OWinRow2, false, XO.O);
+            Test(OWinRow3, false, XO.O);
+            Test(XWinColumn1, false, XO.X);
+            Test(XWinColumn2, false, XO.X);
+            Test(XWinColumn3, false, XO.X);
+            Test(OWinDiagonalDown, false, XO.O);
+            Test(XWinDiagonalUp, false, XO.X);
+        }
     }
 }
