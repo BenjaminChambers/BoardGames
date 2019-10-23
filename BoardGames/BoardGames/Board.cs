@@ -105,14 +105,14 @@ namespace BoardGames
                         runLength++;
                     else
                     {
-                        if (runLength>=minLength)
+                        if (runLength >= minLength)
                         {
                             yield return new Run<T>() { StartRow = r, EndRow = r, StartColumn = x - runLength - 1, EndColumn = x - 1 };
                         }
                         runLength = 0;
                     }
                 }
-                if (runLength>=minLength)
+                if (runLength >= minLength)
                     yield return new Run<T>() { StartRow = r, EndRow = r, StartColumn = Width - runLength - 1, EndColumn = Width - 1 };
             }
         }
@@ -128,9 +128,8 @@ namespace BoardGames
                     else
                     {
                         if (runLength >= minLength)
-                        {
                             yield return new Run<T>() { StartColumn = c, EndColumn = c, StartRow = x - runLength - 1, EndRow = x - 1 };
-                        }
+
                         runLength = 0;
                     }
                 }
@@ -140,11 +139,70 @@ namespace BoardGames
         }
         public IEnumerable<Run<T>> DiagonalRuns(int minLength, T Value)
         {
-            foreach (var r in DiagonalRunUp(minLength, Value)) yield return r;
-            foreach (var r in DiagonalRunDown(minLength, Value)) yield return r;
+            for (int i = 0; i < Height; i++)
+            {
+                foreach (var run in RunUp(Value, minLength, 0, i))
+                    yield return run;
+                foreach (var run in RunDown(Value, minLength, 0, i))
+                    yield return run;
+            }
+            for (int i = 1; i < Width; i++)
+            {
+                foreach (var run in RunUp(Value, minLength, i, 0))
+                    yield return run;
+                foreach (var run in RunDown(Value, minLength, i, Height - 1))
+                    yield return run;
+            }
         }
-        private IEnumerable<Run<T>> DiagonalRunUp(int minLength, T Value) => throw new NotImplementedException();
-        private IEnumerable<Run<T>> DiagonalRunDown(int minLength, T Value) => throw new NotImplementedException();
+
+        private IEnumerable<Run<T>> RunUp(T Value, int minLength, int StartingColumn, int StartingRow)
+        {
+            int runLength = 0;
+            int x = StartingColumn;
+            int y = StartingRow;
+
+            while (x < Width && y < Height)
+            {
+                if (this[x, y].Equals(Value))
+                    runLength++;
+                else
+                {
+                    if (runLength >= minLength)
+                        yield return new Run<T> { StartColumn = StartingColumn, StartRow = StartingRow, EndColumn = x - 1, EndRow = y - 1, Value = Value };
+                    runLength = 0;
+                }
+                x++;
+                y++;
+            }
+            if (runLength >= minLength)
+                yield return new Run<T> { StartColumn = StartingColumn, StartRow = StartingRow, EndColumn = x - 1, EndRow = y - 1, Value = Value };
+        }
+
+        private IEnumerable<Run<T>> RunDown(T Value, int minLength, int StartingColumn, int StartingRow)
+        {
+            int runLength = 0;
+            int x = StartingColumn;
+            int y = StartingRow;
+
+            while (x < Width && y >= 0)
+            {
+                if (this[x, y].Equals(Value))
+                    runLength++;
+                else
+                {
+                    if (runLength >= minLength)
+                        yield return new Run<T> { StartColumn = StartingColumn, StartRow = StartingRow, EndColumn = x - 1, EndRow = y - 1, Value = Value };
+                    runLength = 0;
+                }
+                x++;
+                y--;
+            }
+            if (runLength >= minLength)
+                yield return new Run<T> { StartColumn = StartingColumn, StartRow = StartingRow, EndColumn = x - 1, EndRow = y - 1, Value = Value };
+        }
+
+
+
 
 
         public readonly int Width;
