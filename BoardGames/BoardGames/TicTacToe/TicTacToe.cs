@@ -8,7 +8,12 @@ namespace BoardGames.TicTacToe
     {
         #region Constructors
         public TicTacToe()
-            : base(3, 3) => Turn = XO.X;
+            : base(3, 3)
+        {
+            Turn = XO.X;
+            ProcessBoard();
+        }
+
         public TicTacToe(TicTacToe Source)
             : base(Source)
         {
