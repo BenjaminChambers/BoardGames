@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BoardGames", "BoardGames\Bo
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TicTacToe", "TicTacToe\TicTacToe.csproj", "{38AC924F-799B-49F7-BADE-393837C6FD1C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTests", "UnitTests\UnitTests.csproj", "{1BA64CD9-1CAD-427E-8D01-3D3998FE5463}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UnitTests", "UnitTests\UnitTests.csproj", "{1BA64CD9-1CAD-427E-8D01-3D3998FE5463}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
