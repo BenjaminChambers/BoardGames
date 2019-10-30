@@ -1,8 +1,9 @@
-﻿using System;
+﻿using BoardGames.Pieces;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace BoardGames.TicTacToe
+namespace BoardGames.Games.TicTacToe
 {
     public class TicTacToe : Board<XO>
     {

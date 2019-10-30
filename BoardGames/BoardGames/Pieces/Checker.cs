@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace BoardGames.Gomoku
+namespace BoardGames.Pieces
 {
-    public enum Stone { Empty, Black, White}
+    public enum Checker { Empty, Black, Red }
 }

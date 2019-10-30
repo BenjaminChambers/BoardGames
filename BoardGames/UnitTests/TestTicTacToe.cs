@@ -1,6 +1,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using BoardGames.TicTacToe;
+using BoardGames.Games.TicTacToe;
 using System.Linq;
+using BoardGames.Pieces;
 
 namespace UnitTests
 {
@@ -74,7 +75,7 @@ namespace UnitTests
             static void TestConstruction(XO[] Source)
                 => Util.CompareEnum(Source, new TicTacToe(Source, XO.X).All);
 
-            Util.CompareEnum(Empty, new BoardGames.TicTacToe.TicTacToe().All);
+            Util.CompareEnum(Empty, new TicTacToe().All);
             TestConstruction(Empty);
             TestConstruction(Tie);
             TestConstruction(OWinRow1);
@@ -92,7 +93,7 @@ namespace UnitTests
         {
             static void TestRow(XO[] Source)
             {
-                var b = new BoardGames.TicTacToe.TicTacToe(Source, XO.X);
+                var b = new TicTacToe(Source, XO.X);
                 Util.CompareEnum(b.Row(0), Source.Take(3));
                 Util.CompareEnum(b.Row(1), Source.Skip(3).Take(3));
                 Util.CompareEnum(b.Row(2), Source.Skip(6));

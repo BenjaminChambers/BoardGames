@@ -1,7 +1,8 @@
 ﻿using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
-using BoardGames.TicTacToe;
+using BoardGames.Pieces;
+using BoardGames.Games.TicTacToe;
 
 namespace TicTacToe
 {
@@ -10,7 +11,7 @@ namespace TicTacToe
     /// </summary>
     public partial class MainWindow : Window
     {
-        BoardGames.TicTacToe.TicTacToe game = new BoardGames.TicTacToe.TicTacToe();
+        BoardGames.Games.TicTacToe.TicTacToe game = new BoardGames.Games.TicTacToe.TicTacToe();
 
         public MainWindow()
         {

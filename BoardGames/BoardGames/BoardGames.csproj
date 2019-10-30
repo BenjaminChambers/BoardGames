@@ -4,12 +4,4 @@
     <TargetFramework>netstandard2.1</TargetFramework>
   </PropertyGroup>
 
-  <ItemGroup>
-    <Folder Include="Chess\" />
-    <Folder Include="Checkers\" />
-    <Folder Include="Connect4\" />
-    <Folder Include="Go\" />
-    <Folder Include="Sudoku\" />
-  </ItemGroup>
-
 </Project>

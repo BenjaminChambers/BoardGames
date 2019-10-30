@@ -1,8 +1,10 @@
-﻿using System;
+﻿using BoardGames.Games.Pieces;
+using BoardGames.Pieces;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace BoardGames.Gomoku
+namespace BoardGames.Games.Gomoku
 {
     public class Gomoku : Board<Stone>
     {
