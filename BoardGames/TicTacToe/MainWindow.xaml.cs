@@ -40,5 +40,21 @@ namespace TicTacToe
                 };
             }
         }
+
+        private void OnNewGame(object sender, RoutedEventArgs e)
+        {
+            game = new BoardGames.Games.TicTacToe.TicTacToe();
+            (B1.Content as TextBlock).Text = string.Empty;
+            (B2.Content as TextBlock).Text = string.Empty;
+            (B3.Content as TextBlock).Text = string.Empty;
+            (B4.Content as TextBlock).Text = string.Empty;
+            (B5.Content as TextBlock).Text = string.Empty;
+            (B6.Content as TextBlock).Text = string.Empty;
+            (B7.Content as TextBlock).Text = string.Empty;
+            (B8.Content as TextBlock).Text = string.Empty;
+            (B9.Content as TextBlock).Text = string.Empty;
+
+            Status.Text = "X's turn";
+        }
     }
 }

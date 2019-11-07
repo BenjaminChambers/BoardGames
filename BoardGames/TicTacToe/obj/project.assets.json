@@ -2,28 +2,28 @@
   "version": 3,
   "targets": {
     ".NETCoreApp,Version=v3.0": {
-      "BoardGames/1.0.0": {
+      "LibBoardGames/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.1",
         "compile": {
-          "bin/placeholder/BoardGames.dll": {}
+          "bin/placeholder/LibBoardGames.dll": {}
         },
         "runtime": {
-          "bin/placeholder/BoardGames.dll": {}
+          "bin/placeholder/LibBoardGames.dll": {}
         }
       }
     }
   },
   "libraries": {
-    "BoardGames/1.0.0": {
+    "LibBoardGames/1.0.0": {
       "type": "project",
-      "path": "../BoardGames/BoardGames.csproj",
-      "msbuildProject": "../BoardGames/BoardGames.csproj"
+      "path": "../BoardGames/LibBoardGames.csproj",
+      "msbuildProject": "../BoardGames/LibBoardGames.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.0": [
-      "BoardGames >= 1.0.0"
+      "LibBoardGames >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -62,8 +62,8 @@
       "frameworks": {
         "netcoreapp3.0": {
           "projectReferences": {
-            "C:\\Users\\benja\\source\\repos\\BoardGames\\BoardGames\\BoardGames\\BoardGames.csproj": {
-              "projectPath": "C:\\Users\\benja\\source\\repos\\BoardGames\\BoardGames\\BoardGames\\BoardGames.csproj"
+            "C:\\Users\\benja\\source\\repos\\BoardGames\\BoardGames\\BoardGames\\LibBoardGames.csproj": {
+              "projectPath": "C:\\Users\\benja\\source\\repos\\BoardGames\\BoardGames\\BoardGames\\LibBoardGames.csproj"
             }
           }
         }

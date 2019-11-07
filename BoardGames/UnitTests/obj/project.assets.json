@@ -2030,14 +2030,14 @@
           "lib/netstandard1.3/System.Xml.XPath.XmlDocument.dll": {}
         }
       },
-      "BoardGames/1.0.0": {
+      "LibBoardGames/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.1",
         "compile": {
-          "bin/placeholder/BoardGames.dll": {}
+          "bin/placeholder/LibBoardGames.dll": {}
         },
         "runtime": {
-          "bin/placeholder/BoardGames.dll": {}
+          "bin/placeholder/LibBoardGames.dll": {}
         }
       }
     }
@@ -6784,15 +6784,15 @@
         "system.xml.xpath.xmldocument.nuspec"
       ]
     },
-    "BoardGames/1.0.0": {
+    "LibBoardGames/1.0.0": {
       "type": "project",
-      "path": "../BoardGames/BoardGames.csproj",
-      "msbuildProject": "../BoardGames/BoardGames.csproj"
+      "path": "../BoardGames/LibBoardGames.csproj",
+      "msbuildProject": "../BoardGames/LibBoardGames.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.0": [
-      "BoardGames >= 1.0.0",
+      "LibBoardGames >= 1.0.0",
       "MSTest.TestAdapter >= 1.4.0",
       "MSTest.TestFramework >= 1.4.0",
       "Microsoft.NET.Test.Sdk >= 16.2.0",
@@ -6835,8 +6835,8 @@
       "frameworks": {
         "netcoreapp3.0": {
           "projectReferences": {
-            "C:\\Users\\benja\\source\\repos\\BoardGames\\BoardGames\\BoardGames\\BoardGames.csproj": {
-              "projectPath": "C:\\Users\\benja\\source\\repos\\BoardGames\\BoardGames\\BoardGames\\BoardGames.csproj"
+            "C:\\Users\\benja\\source\\repos\\BoardGames\\BoardGames\\BoardGames\\LibBoardGames.csproj": {
+              "projectPath": "C:\\Users\\benja\\source\\repos\\BoardGames\\BoardGames\\BoardGames\\LibBoardGames.csproj"
             }
           }
         }

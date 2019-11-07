@@ -15,6 +15,6 @@ C:\Users\benja\source\repos\BoardGames\BoardGames\TicTacToe\obj\Debug\netcoreapp
 C:\Users\benja\source\repos\BoardGames\BoardGames\TicTacToe\obj\Debug\netcoreapp3.0\TicTacToe.AssemblyInfo.cs
 C:\Users\benja\source\repos\BoardGames\BoardGames\TicTacToe\obj\Debug\netcoreapp3.0\TicTacToe.dll
 C:\Users\benja\source\repos\BoardGames\BoardGames\TicTacToe\obj\Debug\netcoreapp3.0\TicTacToe.pdb
-C:\Users\benja\source\repos\BoardGames\BoardGames\TicTacToe\bin\Debug\netcoreapp3.0\BoardGames.dll
-C:\Users\benja\source\repos\BoardGames\BoardGames\TicTacToe\bin\Debug\netcoreapp3.0\BoardGames.pdb
 C:\Users\benja\source\repos\BoardGames\BoardGames\TicTacToe\obj\Debug\netcoreapp3.0\TicTacToe.csproj.CopyComplete
+C:\Users\benja\source\repos\BoardGames\BoardGames\TicTacToe\bin\Debug\netcoreapp3.0\LibBoardGames.dll
+C:\Users\benja\source\repos\BoardGames\BoardGames\TicTacToe\bin\Debug\netcoreapp3.0\LibBoardGames.pdb

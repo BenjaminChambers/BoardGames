@@ -4,12 +4,12 @@
     "C:\\Users\\benja\\source\\repos\\BoardGames\\BoardGames\\UnitTests\\UnitTests.csproj": {}
   },
   "projects": {
-    "C:\\Users\\benja\\source\\repos\\BoardGames\\BoardGames\\BoardGames\\BoardGames.csproj": {
+    "C:\\Users\\benja\\source\\repos\\BoardGames\\BoardGames\\BoardGames\\LibBoardGames.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\benja\\source\\repos\\BoardGames\\BoardGames\\BoardGames\\BoardGames.csproj",
-        "projectName": "BoardGames",
-        "projectPath": "C:\\Users\\benja\\source\\repos\\BoardGames\\BoardGames\\BoardGames\\BoardGames.csproj",
+        "projectUniqueName": "C:\\Users\\benja\\source\\repos\\BoardGames\\BoardGames\\BoardGames\\LibBoardGames.csproj",
+        "projectName": "LibBoardGames",
+        "projectPath": "C:\\Users\\benja\\source\\repos\\BoardGames\\BoardGames\\BoardGames\\LibBoardGames.csproj",
         "packagesPath": "C:\\Users\\benja\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\benja\\source\\repos\\BoardGames\\BoardGames\\BoardGames\\obj\\",
         "projectStyle": "PackageReference",
@@ -95,8 +95,8 @@
         "frameworks": {
           "netcoreapp3.0": {
             "projectReferences": {
-              "C:\\Users\\benja\\source\\repos\\BoardGames\\BoardGames\\BoardGames\\BoardGames.csproj": {
-                "projectPath": "C:\\Users\\benja\\source\\repos\\BoardGames\\BoardGames\\BoardGames\\BoardGames.csproj"
+              "C:\\Users\\benja\\source\\repos\\BoardGames\\BoardGames\\BoardGames\\LibBoardGames.csproj": {
+                "projectPath": "C:\\Users\\benja\\source\\repos\\BoardGames\\BoardGames\\BoardGames\\LibBoardGames.csproj"
               }
             }
           }
