@@ -167,19 +167,19 @@ namespace UnitTests
             static void Test(XO[] Source)
             {
                 static void TestBoard(TicTacToe Original, TicTacToe Transformed, int[] Locations)
-                    => Util.CompareEnum(Transformed.All, from x in Locations select Original[x]);
+                    => Util.CompareEnum(from x in Locations select Original[x], Transformed.All);
 
                 var src = new TicTacToe(Source, XO.X);
 
                 var answers = new[]
                 {
                     new[] { 0, 1, 2, 3, 4, 5, 6, 7, 8 },
-                    new[] { 6, 3, 0, 7, 4, 1, 8, 5, 2 },
+                    new[] { 2, 5, 8, 1, 4, 7, 0, 3, 6 },
                     new[] { 8, 7, 6, 5, 4, 3, 2, 1, 0 },
-                    new[] { 2, 5, 8, 1, 4, 7, 0, 3, 6 }
+                    new[] { 6, 3, 0, 7, 4, 1, 8, 5, 2 }
                 };
 
-                for (int i = -1; i < 10; i++)
+                for (int i = 0; i < 10; i++)
                 {
                     for (int offset = 0; offset < 4; offset++)
                         TestBoard(src, src.Rotate(i * 4 + offset), answers[offset]);

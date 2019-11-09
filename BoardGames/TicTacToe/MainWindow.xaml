@@ -63,6 +63,16 @@
                 Margin="25"
                 HorizontalAlignment="Center" Click="OnNewGame" />
 
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+            <Button Content="Flip Horizontal" Margin="25" Click="OnFlipH" />
+            <Button Content="Flip Vertical" Margin="25" Click="OnFlipV" />
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+            <Button Margin="25" Content="Rotate Clockwise" Click="OnRotateCW" />
+            <Button Margin="25" Content="Rotate Counter-Clockwise" Click="OnRotateCCW" />
+        </StackPanel>
+
 
     </StackPanel>
 </Window>

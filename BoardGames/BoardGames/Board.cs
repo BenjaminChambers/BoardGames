@@ -44,9 +44,9 @@ namespace BoardGames
                     _cells[y * Width + x] = rot switch
                     {
                         0 => Source[x, y],
-                        1 => Source[y, Width - 1 - x],
+                        1 => Source[Height - 1 - y, x],
                         2 => Source[Width - 1 - x, Height - 1 - y],
-                        3 => Source[Height - 1 - y, x],
+                        3 => Source[y, Width - 1 - x],
                         _ => throw new InvalidOperationException("How the hell did that happen?")
                     };
                 }

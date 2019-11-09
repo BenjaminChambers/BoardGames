@@ -87,8 +87,8 @@ C:\Users\benja\source\repos\BoardGames\BoardGames\UnitTests\bin\Debug\netcoreapp
 C:\Users\benja\source\repos\BoardGames\BoardGames\UnitTests\bin\Debug\netcoreapp3.0\zh-Hant\Microsoft.TestPlatform.CommunicationUtilities.resources.dll
 C:\Users\benja\source\repos\BoardGames\BoardGames\UnitTests\bin\Debug\netcoreapp3.0\zh-Hant\Microsoft.TestPlatform.CrossPlatEngine.resources.dll
 C:\Users\benja\source\repos\BoardGames\BoardGames\UnitTests\bin\Debug\netcoreapp3.0\zh-Hant\Microsoft.VisualStudio.TestPlatform.Common.resources.dll
-C:\Users\benja\source\repos\BoardGames\BoardGames\UnitTests\bin\Debug\netcoreapp3.0\BoardGames.dll
-C:\Users\benja\source\repos\BoardGames\BoardGames\UnitTests\bin\Debug\netcoreapp3.0\BoardGames.pdb
 C:\Users\benja\source\repos\BoardGames\BoardGames\UnitTests\obj\Debug\netcoreapp3.0\UnitTests.csproj.CopyComplete
 C:\Users\benja\source\repos\BoardGames\BoardGames\UnitTests\obj\Debug\netcoreapp3.0\UnitTests.dll
 C:\Users\benja\source\repos\BoardGames\BoardGames\UnitTests\obj\Debug\netcoreapp3.0\UnitTests.pdb
+C:\Users\benja\source\repos\BoardGames\BoardGames\UnitTests\bin\Debug\netcoreapp3.0\LibBoardGames.dll
+C:\Users\benja\source\repos\BoardGames\BoardGames\UnitTests\bin\Debug\netcoreapp3.0\LibBoardGames.pdb

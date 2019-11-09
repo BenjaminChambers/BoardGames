@@ -8,9 +8,9 @@ namespace UnitTests
 {
     public static class Util
     {
-        public static void CompareEnum<T>(IEnumerable<T> First, IEnumerable<T> Second)
+        public static void CompareEnum<T>(IEnumerable<T> Expected, IEnumerable<T> Actual)
         {
-            foreach (var test in First.Zip(Second))
+            foreach (var test in Expected.Zip(Actual))
                 Assert.AreEqual(test.First, test.Second);
         }
     }
