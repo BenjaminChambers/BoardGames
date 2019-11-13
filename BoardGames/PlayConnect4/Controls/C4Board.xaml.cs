@@ -22,50 +22,47 @@ namespace PlayConnect4.Controls
         readonly static BitmapImage Black = new BitmapImage(new Uri(@"/Assets/checkerblack.png", UriKind.RelativeOrAbsolute));
         readonly static BitmapImage Empty = new BitmapImage(new Uri(@"/Assets/checkernone.png", UriKind.RelativeOrAbsolute));
 
-        readonly StackPanel[] CellStacks = new StackPanel[7];
+        readonly Image[,] Cells = new Image[7,6];
 
         public C4Board()
         {
             InitializeComponent();
 
-            CellStacks[0] = Cells0;
-            CellStacks[1] = Cells1;
-            CellStacks[2] = Cells2;
-            CellStacks[3] = Cells3;
-            CellStacks[4] = Cells4;
-            CellStacks[5] = Cells5;
-            CellStacks[6] = Cells6;
-
             for (int i = 0; i < 7; i++)
             {
+                var b = new Button() { Name = $"Column{i}" };
+                (Content as StackPanel).Children.Add(b);
+                var s = new StackPanel();
+                b.Content = s;
+
                 for (int j = 0; j < 6; j++)
                 {
-                    CellStacks[i].Children.Add(new Image() { Source = Empty, Width = 64, Height = 64 });
+                    var img = new Image() { Source = Empty, Width = 64, Height = 64 };
+                    Cells[i, j] = img;
+                    s.Children.Insert(0,img);
                 }
             }
+        }
+
+        public void Redraw()
+        {
+            for (int i = 0; i < 7; i++)
+                for (int j = 0; j < 6; j++)
+                    Cells[i, j].Source = Empty;
         }
 
         public void Redraw(BoardGames.Games.Connect4.Connect4 Source)
         {
             for (int i = 0; i < 7; i++)
             {
-                CellStacks[i].Children.Clear();
-
                 for (int j = 5; j >= 0; j--)
                 {
-                    var img = new Image()
+                    Cells[i, j].Source = Source[i, j] switch
                     {
-                        Source = Source[i, j] switch
-                        {
-                            BoardGames.Pieces.Checker.Black => Black,
-                            BoardGames.Pieces.Checker.Red => Red,
-                            _ => Empty
-                        },
-                        Width = 64,
-                        Height = 64
+                        BoardGames.Pieces.Checker.Black => Black,
+                        BoardGames.Pieces.Checker.Red => Red,
+                        _ => Empty
                     };
-
-                    CellStacks[i].Children.Add(img);
                 }
             }
         }
