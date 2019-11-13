@@ -10,8 +10,8 @@ namespace UnitTests
     {
         public static void CompareEnum<T>(IEnumerable<T> Expected, IEnumerable<T> Actual)
         {
-            foreach (var test in Expected.Zip(Actual))
-                Assert.AreEqual(test.First, test.Second);
+            foreach (var (Ex, Ac) in Expected.Zip(Actual))
+                Assert.AreEqual(Ex, Ac);
         }
     }
 }

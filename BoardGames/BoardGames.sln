@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TicTacToe", "TicTacToe\TicT
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UnitTests", "UnitTests\UnitTests.csproj", "{1BA64CD9-1CAD-427E-8D01-3D3998FE5463}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlayConnect4", "PlayConnect4\PlayConnect4.csproj", "{DC1EA57B-E99E-4B4F-8B42-7B6A1DA02FD7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{1BA64CD9-1CAD-427E-8D01-3D3998FE5463}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1BA64CD9-1CAD-427E-8D01-3D3998FE5463}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1BA64CD9-1CAD-427E-8D01-3D3998FE5463}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DC1EA57B-E99E-4B4F-8B42-7B6A1DA02FD7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DC1EA57B-E99E-4B4F-8B42-7B6A1DA02FD7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DC1EA57B-E99E-4B4F-8B42-7B6A1DA02FD7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DC1EA57B-E99E-4B4F-8B42-7B6A1DA02FD7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
