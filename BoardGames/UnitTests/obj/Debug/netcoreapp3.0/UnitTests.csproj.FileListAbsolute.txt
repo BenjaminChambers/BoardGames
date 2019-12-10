@@ -92,3 +92,5 @@ C:\Users\benja\source\repos\BoardGames\BoardGames\UnitTests\obj\Debug\netcoreapp
 C:\Users\benja\source\repos\BoardGames\BoardGames\UnitTests\obj\Debug\netcoreapp3.0\UnitTests.pdb
 C:\Users\benja\source\repos\BoardGames\BoardGames\UnitTests\bin\Debug\netcoreapp3.0\LibBoardGames.dll
 C:\Users\benja\source\repos\BoardGames\BoardGames\UnitTests\bin\Debug\netcoreapp3.0\LibBoardGames.pdb
+C:\Users\benja\source\repos\BoardGames\BoardGames\UnitTests\bin\Debug\netcoreapp3.0\LibBoardGames.xml
+C:\Users\benja\source\repos\BoardGames\BoardGames\UnitTests\bin\Debug\netcoreapp3.0\UnitTests.xml
