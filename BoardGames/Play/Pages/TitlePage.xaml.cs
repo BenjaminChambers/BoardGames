@@ -20,7 +20,7 @@ namespace Play.Pages
     {
         public TitlePage()
         {
-            InitializeComponent();
+            this.InitializeComponent();
         }
     }
 }

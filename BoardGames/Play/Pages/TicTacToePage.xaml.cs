@@ -20,7 +20,7 @@ namespace Play.Pages
     {
         public TicTacToePage()
         {
-            InitializeComponent();
+            this.InitializeComponent();
         }
     }
 }
