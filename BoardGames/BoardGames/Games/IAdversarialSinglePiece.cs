@@ -29,7 +29,7 @@
         /// <summary>
         /// Gets the current game board.
         /// </summary>
-        Grid<int> Current => this.History.Last().Result;
+        Grid<int> Current { get; }
 
         /// <summary>
         /// Makes a play for the current player at the specified index.
