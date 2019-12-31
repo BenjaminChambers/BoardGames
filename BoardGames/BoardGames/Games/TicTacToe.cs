@@ -27,12 +27,28 @@
             };
         }
 
+        /// <summary>
+        /// Gets a value indicating whether it is the first player's turn or not.
+        /// Inherited from IAdversarialSinglePice.
+        /// </summary>
         public bool Turn => this.turn;
 
+        /// <summary>
+        /// Gets the current state of the game.
+        /// Inherited from IAdversarialSinglePice.
+        /// </summary>
         public TwoPlayerGameState State => this.state;
 
+        /// <summary>
+        /// Gets the history of the game, consisting of the move each player made and the resulting board.
+        /// Inherited from IAdversarialSinglePice.
+        /// </summary>
         public IReadOnlyList<(int Index, Grid<int> Result)> History => this.history;
 
+        /// <summary>
+        /// Gets the most recent board.
+        /// Inherited from IAdversarialSinglePice.
+        /// </summary>
         public Grid<int> Current => this.History.Last().Result;
 
         /// <summary>
