@@ -1,0 +1,320 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>LibBoardGames</name>
+    </assembly>
+    <members>
+        <member name="T:BoardGames.Games.IAdversarialSinglePiece">
+            <summary>
+            Games consisting of two players each placing a single type of piece on the board.
+            Tic-Tac-Toe, Connect4, and Go, are representative of this type of game.
+            </summary>
+        </member>
+        <member name="P:BoardGames.Games.IAdversarialSinglePiece.Turn">
+            <summary>
+            Gets a value indicating whether it is the first player's turn or not.
+            </summary>
+        </member>
+        <member name="P:BoardGames.Games.IAdversarialSinglePiece.State">
+            <summary>
+            Gets a value indicating the current state of play.
+            </summary>
+        </member>
+        <member name="P:BoardGames.Games.IAdversarialSinglePiece.History">
+            <summary>
+            Gets the history of the game, consisting of every move and the resulting board state after that move.
+            </summary>
+        </member>
+        <member name="P:BoardGames.Games.IAdversarialSinglePiece.Current">
+            <summary>
+            Gets the current game board.
+            </summary>
+        </member>
+        <member name="M:BoardGames.Games.IAdversarialSinglePiece.Play(System.Int32)">
+            <summary>
+            Makes a play for the current player at the specified index.
+            </summary>
+            <param name="index">The location to place a piece.</param>
+        </member>
+        <member name="T:BoardGames.Games.TicTacToe">
+            <summary>
+            A game of Tic-Tac-Toe, consisting of players placing Xs and Os on a 3x3 grid until one has achieved 3 in a row.
+            </summary>
+        </member>
+        <member name="M:BoardGames.Games.TicTacToe.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:BoardGames.Games.TicTacToe"/> class.
+            </summary>
+        </member>
+        <member name="P:BoardGames.Games.TicTacToe.Turn">
+            <summary>
+            Gets a value indicating whether it is the first player's turn or not.
+            Inherited from IAdversarialSinglePice.
+            </summary>
+        </member>
+        <member name="P:BoardGames.Games.TicTacToe.State">
+            <summary>
+            Gets the current state of the game.
+            Inherited from IAdversarialSinglePice.
+            </summary>
+        </member>
+        <member name="P:BoardGames.Games.TicTacToe.History">
+            <summary>
+            Gets the history of the game, consisting of the move each player made and the resulting board.
+            Inherited from IAdversarialSinglePice.
+            </summary>
+        </member>
+        <member name="P:BoardGames.Games.TicTacToe.Current">
+            <summary>
+            Gets the most recent board.
+            Inherited from IAdversarialSinglePice.
+            </summary>
+        </member>
+        <member name="M:BoardGames.Games.TicTacToe.Play(System.Int32)">
+            <summary>
+            Places an X or O in the given location.
+            Adds the move and the new board to the History.
+            Computes a new game state.
+            </summary>
+            <param name="index">The location to play in.</param>
+        </member>
+        <member name="T:BoardGames.Games.TwoPlayerGameState">
+            <summary>
+            State enum for games played between two players.
+            </summary>
+        </member>
+        <member name="F:BoardGames.Games.TwoPlayerGameState.Invalid">
+            <summary>
+            Used when the game state doesn't make sense (ie wrong number of pieces or both players winning).
+            </summary>
+        </member>
+        <member name="F:BoardGames.Games.TwoPlayerGameState.InProgress">
+            <summary>
+            The game has not yet ended.
+            </summary>
+        </member>
+        <member name="F:BoardGames.Games.TwoPlayerGameState.Tie">
+            <summary>
+            The game has ended without a winner.
+            </summary>
+        </member>
+        <member name="F:BoardGames.Games.TwoPlayerGameState.PlayerOneWins">
+            <summary>
+            The game has ended with the first player winning.
+            </summary>
+        </member>
+        <member name="F:BoardGames.Games.TwoPlayerGameState.PlayerTwoWins">
+            <summary>
+            The game has ended with the second player winning.
+            </summary>
+        </member>
+        <member name="T:BoardGames.Grid`1">
+            <summary>
+            A smart grid, including functions for transforming as necessary.
+            </summary>
+            <typeparam name="T">The type of value in each cell.</typeparam>
+        </member>
+        <member name="M:BoardGames.Grid`1.#ctor(System.Int32,System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:BoardGames.Grid`1"/> class.
+            Every cell is filled with the default value of T.
+            </summary>
+            <param name="width">The width of the <see cref="T:BoardGames.Grid`1"/> instance.</param>
+            <param name="height">The height of the <see cref="T:BoardGames.Grid`1"/> instance.</param>
+        </member>
+        <member name="M:BoardGames.Grid`1.#ctor(System.Int32,System.Int32,`0[])">
+            <summary>
+            Initializes a new instance of the <see cref="T:BoardGames.Grid`1"/> class.
+            The value of every cell is supplied.
+            </summary>
+            <param name="width">The width of the <see cref="T:BoardGames.Grid`1"/> instance.</param>
+            <param name="height">The height of the <see cref="T:BoardGames.Grid`1"/> instance.</param>
+            <param name="source">An array of T, which must contain width*height values.</param>
+        </member>
+        <member name="M:BoardGames.Grid`1.#ctor(BoardGames.Grid{`0})">
+            <summary>
+            Initializes a new instance of the <see cref="T:BoardGames.Grid`1"/> class.
+            </summary>
+            <param name="source">The <see cref="T:BoardGames.Grid`1"/> to copy.</param>
+        </member>
+        <member name="M:BoardGames.Grid`1.#ctor(BoardGames.Grid{`0},System.Collections.Generic.IEnumerable{System.ValueTuple{System.Int32,`0}})">
+            <summary>
+            Initializes a new instance of the <see cref="T:BoardGames.Grid`1"/> class, performing a deep copy of the original data, and applying the list of changes specified.
+            </summary>
+            <param name="source">The original <see cref="T:BoardGames.Grid`1"/> to copy.</param>
+            <param name="changes">The list of chagnes to apply.</param>
+        </member>
+        <member name="P:BoardGames.Grid`1.Width">
+            <summary>
+            Gets the Width of the <see cref="T:BoardGames.Grid`1"/>.
+            </summary>
+        </member>
+        <member name="P:BoardGames.Grid`1.Height">
+            <summary>
+            Gets the Height of the <see cref="T:BoardGames.Grid`1"/>.
+            </summary>
+        </member>
+        <member name="P:BoardGames.Grid`1.Item(System.Int32)">
+            <summary>
+            Access the cell at a specified index.
+            </summary>
+            <param name="index">The index to access.</param>
+            <returns>T.</returns>
+        </member>
+        <member name="P:BoardGames.Grid`1.Item(System.Int32,System.Int32)">
+            <summary>
+            Access the cell at the specified grid coordinates.
+            </summary>
+            <param name="column">The column to access.</param>
+            <param name="row">The row to access.</param>
+            <returns>T.</returns>
+        </member>
+        <member name="M:BoardGames.Grid`1.All">
+            <summary>
+            Enumerates over every cell in the <see cref="T:BoardGames.Grid`1"/>.
+            </summary>
+            <returns>Every cell in order.</returns>
+        </member>
+        <member name="M:BoardGames.Grid`1.Row(System.Int32)">
+            <summary>
+            Enumerates over every cell in a particular row.
+            </summary>
+            <param name="row">The row to enumerate.</param>
+            <returns>The cell values.</returns>
+        </member>
+        <member name="M:BoardGames.Grid`1.Column(System.Int32)">
+            <summary>
+            Enumerates over ever cell in a particular column.
+            </summary>
+            <param name="column">The column to enumerate.</param>
+            <returns>The cell values.</returns>
+        </member>
+        <member name="M:BoardGames.Grid`1.Rotate(System.Int32)">
+            <summary>
+            Returns a new <see cref="T:BoardGames.Grid`1"/> rotated by the specified number of turns.
+            </summary>
+            <param name="clockwiseRotations">The number of clockwise rotations to perform.
+            To rotate counter-clockwise, specify a negative number.
+            Values greater than 3 will be modulated by 4.</param>
+            <returns>A new <see cref="T:BoardGames.Grid`1"/> with the rotated data.</returns>
+        </member>
+        <member name="M:BoardGames.Grid`1.Flip(System.Boolean,System.Boolean)">
+            <summary>
+            Returns a new instance of the <see cref="T:BoardGames.Grid`1"/> class, performing a deep copy of the original, but flipped along the horizontal and/or vertical axes.
+            </summary>
+            <param name="horizontal">Whether or not to flip along the horizontal axis.</param>
+            <param name="vertical">Whether or not to flip along the vertical axis.</param>
+            <returns>A new instance of the <see cref="T:BoardGames.Grid`1"/> class with the modified data.</returns>
+        </member>
+        <member name="M:BoardGames.Grid`1.Transpose">
+            <summary>
+            Swaps the horizontal and vertical axes in a <see cref="T:BoardGames.Grid`1"/>.
+            </summary>
+            <returns>A new instance with the modified data.</returns>
+        </member>
+        <member name="M:BoardGames.Grid`1.Runs(System.Int32)">
+            <summary>
+            Searches for all runs in a grid of a minimum length.
+            </summary>
+            <param name="minimumLength">The minimum length run to return. Setting to 1 will include a large number of duplicate singles.</param>
+            <returns>An <see cref="T:System.Collections.Generic.IEnumerable`1"/> query of the results.</returns>
+        </member>
+        <member name="M:BoardGames.Grid`1.Run6(System.Int32,System.Int32)">
+            <summary>
+            Evaluates a single row and returns every run of a minimum length.
+            </summary>
+            <param name="row">The row to evaluate.</param>
+            <param name="minimumLength">The minimum length of run to return.</param>
+            <returns>Every instance of <see cref="T:BoardGames.Run`1"/> that meet the length criteria.</returns>
+        </member>
+        <member name="M:BoardGames.Grid`1.Run8(System.Int32,System.Int32)">
+            <summary>
+            Evaluates a single column and returns every run of a minimum length.
+            </summary>
+            <param name="column">The column to evaluate.</param>
+            <param name="minimumLength">The minimum length of run to return.</param>
+            <returns>Every instance of <see cref="T:BoardGames.Run`1"/> that meet the length criteria.</returns>
+        </member>
+        <member name="M:BoardGames.Grid`1.Run9(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Evaluates a diagonal (increasing both X and Y coordinates) and returns every <see cref="T:BoardGames.Run`1"/> of a minimum length.
+            </summary>
+            <param name="startColumn">The column to start in.</param>
+            <param name="startRow">The row to start in.</param>
+            <param name="minimumLength">The minimum length.</param>
+            <returns>Every <see cref="T:BoardGames.Run`1"/> found that meets the criteria.</returns>
+        </member>
+        <member name="M:BoardGames.Grid`1.Run3(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Evaluates a diagonal (increasing X and decreasing Y) and returns every <see cref="T:BoardGames.Run`1"/> of a minimum length.
+            </summary>
+            <param name="startColumn">The column to start in.</param>
+            <param name="startRow">The row to start in.</param>
+            <param name="minimumLength">The minimum length.</param>
+            <returns>Every <see cref="T:BoardGames.Run`1"/> found that meets the criteria.</returns>
+        </member>
+        <member name="T:BoardGames.Run`1">
+            <summary>
+            Represents a string of identical values through a <see cref="T:BoardGames.Grid`1"/>, along a straight horizontal, vertical, or diagonal line.
+            </summary>
+            <typeparam name="T">The type held by cells in the <see cref="T:BoardGames.Grid`1"/>.</typeparam>
+        </member>
+        <member name="F:BoardGames.Run`1.StartRow">
+            <summary>The Row coordinate of the first end.</summary>
+        </member>
+        <member name="F:BoardGames.Run`1.StartColumn">
+            <summary>The Column coordinate of the first end.</summary>
+        </member>
+        <member name="F:BoardGames.Run`1.EndRow">
+            <summary>The Row coordinate of the second end.</summary>
+        </member>
+        <member name="F:BoardGames.Run`1.EndColumn">
+            <summary>The Column coordinate of the second end.</summary>
+        </member>
+        <member name="F:BoardGames.Run`1.Value">
+            <summary>The value of the cells in the <see cref="T:BoardGames.Run`1"/>.</summary>
+        </member>
+        <member name="F:BoardGames.Run`1.Length">
+            <summary>The length of the <see cref="T:BoardGames.Run`1"/>.</summary>
+        </member>
+        <member name="M:BoardGames.Run`1.#ctor(System.Int32,System.Int32,System.Int32,System.Int32,`0)">
+            <summary>
+            Initializes a new instance of the <see cref="T:BoardGames.Run`1"/> struct.
+            </summary>
+            <param name="startColumn">The column where the <see cref="T:BoardGames.Run`1"/> begins.</param>
+            <param name="startRow">The row where the <see cref="T:BoardGames.Run`1"/> begins.</param>
+            <param name="endColumn">The column where the <see cref="T:BoardGames.Run`1"/> ends.</param>
+            <param name="endRow">The row where the <see cref="T:BoardGames.Run`1"/> ends.</param>
+            <param name="value">The value found in the run.</param>
+        </member>
+        <member name="M:BoardGames.Run`1.op_Equality(BoardGames.Run{`0},BoardGames.Run{`0})">
+            <summary>
+            Tests for equality by comparing the terminals of the <see cref="T:BoardGames.Run`1"/>s.
+            </summary>
+            <param name="first">The first <see cref="T:BoardGames.Run`1"/> to compare.</param>
+            <param name="second">The second <see cref="T:BoardGames.Run`1"/> to compare.</param>
+            <returns>True if the <see cref="T:BoardGames.Run`1"/>s are identical, or false if they are not.</returns>
+        </member>
+        <member name="M:BoardGames.Run`1.op_Inequality(BoardGames.Run{`0},BoardGames.Run{`0})">
+            <summary>
+            Tets for inequality by comparing the terminals of the <see cref="T:BoardGames.Run`1"/>s.
+            </summary>
+            <param name="first">The first <see cref="T:BoardGames.Run`1"/> to compare.</param>
+            <param name="second">The second <see cref="T:BoardGames.Run`1"/> to compare.</param>
+            <returns>False if the <see cref="T:BoardGames.Run`1"/>s are identical, or False if they are not.</returns>
+        </member>
+        <member name="M:BoardGames.Run`1.Equals(System.Object)">
+            <summary>
+            Override the Equals function.
+            </summary>
+            <param name="obj">The object to compare to.</param>
+            <returns>True if the second object is also a <see cref="T:BoardGames.Run`1"/> and equal to this, or false if they are not.</returns>
+        </member>
+        <member name="M:BoardGames.Run`1.GetHashCode">
+            <summary>
+            Override the GetHashCode function.
+            </summary>
+            <returns>A hash code used for sorting into buckets.</returns>
+        </member>
+    </members>
+</doc>

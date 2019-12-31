@@ -7,10 +7,28 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Assets\O.png" />
+    <None Remove="Assets\X.png" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="StyleCop.Analyzers" Version="1.1.118">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\BoardGames\LibBoardGames.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Assets\O.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\X.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
 
 </Project>

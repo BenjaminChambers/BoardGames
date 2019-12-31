@@ -11,7 +11,7 @@
     <StackPanel HorizontalAlignment="Center"
                 VerticalAlignment="Center">
 
-        <Button Content="Tic Tac Toe" />
+        <Button Content="Tic Tac Toe" Click="ClickTicTacToe" />
 
     </StackPanel>
 </Page>

@@ -19,3 +19,8 @@ C:\Users\benja\Source\Repos\BenjaminChambers\BoardGames\BoardGames\Play\bin\Debu
 C:\Users\benja\Source\Repos\BenjaminChambers\BoardGames\BoardGames\Play\obj\Debug\netcoreapp3.1\Play.dll
 C:\Users\benja\Source\Repos\BenjaminChambers\BoardGames\BoardGames\Play\obj\Debug\netcoreapp3.1\Pages\TicTacToePage.g.cs
 C:\Users\benja\Source\Repos\BenjaminChambers\BoardGames\BoardGames\Play\obj\Debug\netcoreapp3.1\Pages\TicTacToePage.baml
+C:\Users\benja\Source\Repos\BenjaminChambers\BoardGames\BoardGames\Play\bin\Debug\netcoreapp3.1\LibBoardGames.dll
+C:\Users\benja\Source\Repos\BenjaminChambers\BoardGames\BoardGames\Play\bin\Debug\netcoreapp3.1\LibBoardGames.pdb
+C:\Users\benja\Source\Repos\BenjaminChambers\BoardGames\BoardGames\Play\bin\Debug\netcoreapp3.1\LibBoardGames.xml
+C:\Users\benja\Source\Repos\BenjaminChambers\BoardGames\BoardGames\Play\obj\Debug\netcoreapp3.1\Play.csproj.CopyComplete
+C:\Users\benja\source\repos\BenjaminChambers\BoardGames\BoardGames\Play\obj\Debug\netcoreapp3.1\GeneratedInternalTypeHelper.g.cs

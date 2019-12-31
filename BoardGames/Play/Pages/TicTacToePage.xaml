@@ -4,11 +4,70 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Play.Pages"
+      xmlns:cntl="clr-namespace:Play.Controllers"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="600" d:DesignWidth="800"
       Title="TicTacToePage">
 
-    <Grid>
-        
-    </Grid>
+    <Page.DataContext>
+        <cntl:TicTacToeController x:Name="gameController" />
+    </Page.DataContext>
+
+    <StackPanel>
+
+        <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="128" />
+                <RowDefinition Height="128" />
+                <RowDefinition Height="128" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="128" />
+                <ColumnDefinition Width="128" />
+                <ColumnDefinition Width="128" />
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3"
+                   Text="{Binding StatusText.Value, Mode=OneWay}"
+                   TextAlignment="Center" />
+
+            <Image Grid.Row="1" Grid.Column="0" Source="/Assets/X.png" Visibility="{Binding XVisibility[7].Value, Mode=OneWay}" />
+            <Image Grid.Row="1" Grid.Column="0" Source="/Assets/O.png" Visibility="{Binding OVisibility[7].Value, Mode=OneWay}" />
+            <Button x:Name="Cell7" Grid.Row="1" Grid.Column="0" Visibility="{Binding EVisibility[7].Value, Mode=OneWay}" Click="Button_Click" />
+
+            <Image Grid.Row="1" Grid.Column="1" Source="/Assets/X.png" Visibility="{Binding XVisibility[8].Value, Mode=OneWay}" />
+            <Image Grid.Row="1" Grid.Column="1" Source="/Assets/O.png" Visibility="{Binding OVisibility[8].Value, Mode=OneWay}" />
+            <Button x:Name="Cell8" Grid.Row="1" Grid.Column="1" Visibility="{Binding EVisibility[8].Value, Mode=OneWay}" Click="Button_Click" />
+
+            <Image Grid.Row="1" Grid.Column="2" Source="/Assets/X.png" Visibility="{Binding XVisibility[9].Value, Mode=OneWay}" />
+            <Image Grid.Row="1" Grid.Column="2" Source="/Assets/O.png" Visibility="{Binding OVisibility[9].Value, Mode=OneWay}" />
+            <Button x:Name="Cell9" Grid.Row="1" Grid.Column="2" Visibility="{Binding EVisibility[9].Value, Mode=OneWay}" Click="Button_Click" />
+
+            <Image Grid.Row="2" Grid.Column="0" Source="/Assets/X.png" Visibility="{Binding XVisibility[4].Value, Mode=OneWay}" />
+            <Image Grid.Row="2" Grid.Column="0" Source="/Assets/O.png" Visibility="{Binding OVisibility[4].Value, Mode=OneWay}" />
+            <Button x:Name="Cell4" Grid.Row="2" Grid.Column="0" Visibility="{Binding EVisibility[4].Value, Mode=OneWay}" Click="Button_Click" />
+
+            <Image Grid.Row="2" Grid.Column="1" Source="/Assets/X.png" Visibility="{Binding XVisibility[5].Value, Mode=OneWay}" />
+            <Image Grid.Row="2" Grid.Column="1" Source="/Assets/O.png" Visibility="{Binding OVisibility[5].Value, Mode=OneWay}" />
+            <Button x:Name="Cell5" Grid.Row="2" Grid.Column="1" Visibility="{Binding EVisibility[5].Value, Mode=OneWay}" Click="Button_Click" />
+
+            <Image Grid.Row="2" Grid.Column="2" Source="/Assets/X.png" Visibility="{Binding XVisibility[6].Value, Mode=OneWay}" />
+            <Image Grid.Row="2" Grid.Column="2" Source="/Assets/O.png" Visibility="{Binding OVisibility[6].Value, Mode=OneWay}" />
+            <Button x:Name="Cell6" Grid.Row="2" Grid.Column="2" Visibility="{Binding EVisibility[6].Value, Mode=OneWay}" Click="Button_Click" />
+
+            <Image Grid.Row="3" Grid.Column="0" Source="/Assets/X.png" Visibility="{Binding XVisibility[1].Value, Mode=OneWay}" />
+            <Image Grid.Row="3" Grid.Column="0" Source="/Assets/O.png" Visibility="{Binding OVisibility[1].Value, Mode=OneWay}" />
+            <Button x:Name="Cell1" Grid.Row="3" Grid.Column="0" Visibility="{Binding EVisibility[1].Value, Mode=OneWay}" Click="Button_Click" />
+
+            <Image Grid.Row="3" Grid.Column="1" Source="/Assets/X.png" Visibility="{Binding XVisibility[2].Value, Mode=OneWay}" />
+            <Image Grid.Row="3" Grid.Column="1" Source="/Assets/O.png" Visibility="{Binding OVisibility[2].Value, Mode=OneWay}" />
+            <Button x:Name="Cell2" Grid.Row="3" Grid.Column="1" Visibility="{Binding EVisibility[2].Value, Mode=OneWay}" Click="Button_Click" />
+
+            <Image Grid.Row="3" Grid.Column="2" Source="/Assets/X.png" Visibility="{Binding XVisibility[3].Value, Mode=OneWay}" />
+            <Image Grid.Row="3" Grid.Column="2" Source="/Assets/O.png" Visibility="{Binding OVisibility[3].Value, Mode=OneWay}" />
+            <Button x:Name="Cell3" Grid.Row="3" Grid.Column="2" Visibility="{Binding EVisibility[3].Value, Mode=OneWay}" Click="Button_Click" />
+
+        </Grid>
+    </StackPanel>
 </Page>

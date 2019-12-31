@@ -4,6 +4,16 @@
     ".NETCoreApp,Version=v3.1": {
       "StyleCop.Analyzers/1.1.118": {
         "type": "package"
+      },
+      "LibBoardGames/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.1",
+        "compile": {
+          "bin/placeholder/LibBoardGames.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/LibBoardGames.dll": {}
+        }
       }
     }
   },
@@ -32,10 +42,16 @@
         "tools/install.ps1",
         "tools/uninstall.ps1"
       ]
+    },
+    "LibBoardGames/1.0.0": {
+      "type": "project",
+      "path": "../BoardGames/LibBoardGames.csproj",
+      "msbuildProject": "../BoardGames/LibBoardGames.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
+      "LibBoardGames >= 1.0.0",
       "StyleCop.Analyzers >= 1.1.118"
     ]
   },
@@ -45,11 +61,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\benja\\Source\\Repos\\BenjaminChambers\\BoardGames\\BoardGames\\Play\\Play.csproj",
+      "projectUniqueName": "C:\\Users\\benja\\source\\repos\\BenjaminChambers\\BoardGames\\BoardGames\\Play\\Play.csproj",
       "projectName": "Play",
-      "projectPath": "C:\\Users\\benja\\Source\\Repos\\BenjaminChambers\\BoardGames\\BoardGames\\Play\\Play.csproj",
+      "projectPath": "C:\\Users\\benja\\source\\repos\\BenjaminChambers\\BoardGames\\BoardGames\\Play\\Play.csproj",
       "packagesPath": "C:\\Users\\benja\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\benja\\Source\\Repos\\BenjaminChambers\\BoardGames\\BoardGames\\Play\\obj\\",
+      "outputPath": "C:\\Users\\benja\\source\\repos\\BenjaminChambers\\BoardGames\\BoardGames\\Play\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\benja\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -64,7 +80,11 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\benja\\source\\repos\\BenjaminChambers\\BoardGames\\BoardGames\\BoardGames\\LibBoardGames.csproj": {
+              "projectPath": "C:\\Users\\benja\\source\\repos\\BenjaminChambers\\BoardGames\\BoardGames\\BoardGames\\LibBoardGames.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
