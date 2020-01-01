@@ -1,8 +1,0 @@
-C:\Users\benja\source\repos\BoardGames\BoardGames\BoardGames\obj\Debug\netstandard2.0\BoardGames.csprojAssemblyReference.cache
-C:\Users\benja\source\repos\BoardGames\BoardGames\BoardGames\obj\Debug\netstandard2.0\BoardGames.AssemblyInfoInputs.cache
-C:\Users\benja\source\repos\BoardGames\BoardGames\BoardGames\obj\Debug\netstandard2.0\BoardGames.AssemblyInfo.cs
-C:\Users\benja\source\repos\BoardGames\BoardGames\BoardGames\bin\Debug\netstandard2.0\BoardGames.deps.json
-C:\Users\benja\source\repos\BoardGames\BoardGames\BoardGames\bin\Debug\netstandard2.0\BoardGames.dll
-C:\Users\benja\source\repos\BoardGames\BoardGames\BoardGames\bin\Debug\netstandard2.0\BoardGames.pdb
-C:\Users\benja\source\repos\BoardGames\BoardGames\BoardGames\obj\Debug\netstandard2.0\BoardGames.dll
-C:\Users\benja\source\repos\BoardGames\BoardGames\BoardGames\obj\Debug\netstandard2.0\BoardGames.pdb
