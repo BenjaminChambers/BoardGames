@@ -24,3 +24,5 @@ C:\Users\benja\Source\Repos\BenjaminChambers\BoardGames\BoardGames\Play\bin\Debu
 C:\Users\benja\Source\Repos\BenjaminChambers\BoardGames\BoardGames\Play\bin\Debug\netcoreapp3.1\LibBoardGames.xml
 C:\Users\benja\Source\Repos\BenjaminChambers\BoardGames\BoardGames\Play\obj\Debug\netcoreapp3.1\Play.csproj.CopyComplete
 C:\Users\benja\source\repos\BenjaminChambers\BoardGames\BoardGames\Play\obj\Debug\netcoreapp3.1\GeneratedInternalTypeHelper.g.cs
+C:\Users\benja\Source\Repos\BenjaminChambers\BoardGames\BoardGames\Play\obj\Debug\netcoreapp3.1\Views\XOCellView.g.cs
+C:\Users\benja\Source\Repos\BenjaminChambers\BoardGames\BoardGames\Play\obj\Debug\netcoreapp3.1\Views\XOCellView.baml

@@ -6,6 +6,8 @@
     using System.Runtime.CompilerServices;
     using System.Text;
     using System.Windows;
+    using System.Windows.Controls;
+    using System.Windows.Input;
     using BoardGames.Games;
 
     /// <summary>
@@ -60,6 +62,9 @@
         /// </summary>
         public IReadOnlyList<BindingValue<Visibility>> EVisibility
             => this.eVisibility;
+
+        public TwoPlayerGameState State
+            => this.game.State;
 
         public void Play(int Cell)
         {

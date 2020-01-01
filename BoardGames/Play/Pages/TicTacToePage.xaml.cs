@@ -1,5 +1,6 @@
 ﻿namespace Play.Pages
 {
+    using BoardGames.Games;
     using System;
     using System.Collections.Generic;
     using System.Text;
@@ -26,9 +27,17 @@
             this.InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        public static readonly RoutedUICommand Play = new RoutedUICommand();
+
+
+        private void CommandBinding_CanExecute(object sender, CanExecuteRoutedEventArgs e)
         {
-            this.gameController.Play((int)char.GetNumericValue((sender as Button).Name[4]));
+            e.CanExecute = this.gameController.State == TwoPlayerGameState.InProgress;
+        }
+
+        private void CommandBinding_Executed(object sender, ExecutedRoutedEventArgs e)
+        {
+            this.gameController.Play((int)e.Parameter);
         }
     }
 }
