@@ -40,33 +40,26 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\benja\\.nuget\\packages\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\benja\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\benja\\source\\repos\\BoardGames\\BoardGames\\BoardGames\\LibBoardGames.csproj",
+      "projectUniqueName": "C:\\Users\\benja\\Source\\Repos\\BenjaminChambers\\BoardGames\\BoardGames\\BoardGames\\LibBoardGames.csproj",
       "projectName": "LibBoardGames",
-      "projectPath": "C:\\Users\\benja\\source\\repos\\BoardGames\\BoardGames\\BoardGames\\LibBoardGames.csproj",
+      "projectPath": "C:\\Users\\benja\\Source\\Repos\\BenjaminChambers\\BoardGames\\BoardGames\\BoardGames\\LibBoardGames.csproj",
       "packagesPath": "C:\\Users\\benja\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\benja\\source\\repos\\BoardGames\\BoardGames\\BoardGames\\obj\\",
+      "outputPath": "C:\\Users\\benja\\Source\\Repos\\BenjaminChambers\\BoardGames\\BoardGames\\BoardGames\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-      ],
       "configFilePaths": [
         "C:\\Users\\benja\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\ServiceFabricSDK.config"
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netstandard2.1"
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\Microsoft SDKs\\Service Fabric\\packages": {},
-        "http://nuget.syncfusion.com/nuget_universalwindows/nuget/getsyncfusionpackages/universalwindows": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {

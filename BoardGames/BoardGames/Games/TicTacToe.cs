@@ -10,14 +10,17 @@
     public class TicTacToe : IAdversarialSinglePiece
     {
         private readonly List<(int Index, Grid<int> Result)> history;
+        private bool turn;
+        private TwoPlayerGameState state;
+
 
         /// <summary>
         /// Initializes a new instance of the <see cref="TicTacToe"/> class.
         /// </summary>
         public TicTacToe()
         {
-            this.Turn = true;
-            this.State = TwoPlayerGameState.InProgress;
+            this.turn = true;
+            this.state = TwoPlayerGameState.InProgress;
             this.history = new List<(int, Grid<int>)>
             {
                 (0, new Grid<int>(3, 3)),
@@ -26,23 +29,27 @@
 
         /// <summary>
         /// Gets a value indicating whether it is the first player's turn or not.
+        /// Inherited from IAdversarialSinglePice.
         /// </summary>
-        public bool Turn { get; private set; }
+        public bool Turn => this.turn;
 
         /// <summary>
         /// Gets the current state of the game.
+        /// Inherited from IAdversarialSinglePice.
         /// </summary>
-        public TwoPlayerGameState State { get; private set; }
+        public TwoPlayerGameState State => this.state;
 
         /// <summary>
         /// Gets the history of the game, consisting of the move each player made and the resulting board.
+        /// Inherited from IAdversarialSinglePice.
         /// </summary>
-        public IReadOnlyList<(int Index, Grid<int> Result)> History { get; }
+        public IReadOnlyList<(int Index, Grid<int> Result)> History => this.history;
 
         /// <summary>
         /// Gets the most recent board.
+        /// Inherited from IAdversarialSinglePice.
         /// </summary>
-        public Grid<int> Current => (this as IAdversarialSinglePiece).Current;
+        public Grid<int> Current => this.History.Last().Result;
 
         /// <summary>
         /// Places an X or O in the given location.
@@ -66,7 +73,8 @@
                 this.history.Add((index, new Grid<int>(this.Current, new[] { (index, 2) })));
             }
 
-            this.State = TwoPlayerGameState.InProgress;
+            this.state = TwoPlayerGameState.InProgress;
+            this.turn = !this.turn;
             var runs = this.Current.Runs(3);
             if (runs.Any())
             {
@@ -78,7 +86,7 @@
                          where run.Value == 2
                          select 1).Any();
 
-                this.State = (x, o) switch
+                this.state = (x, o) switch
                 {
                     (false, false) => TwoPlayerGameState.InProgress,
                     (false, true) => TwoPlayerGameState.PlayerTwoWins,
@@ -90,9 +98,14 @@
             {
                 if (!this.Current.All().Contains(0))
                 {
-                    this.State = TwoPlayerGameState.Tie;
+                    this.state = TwoPlayerGameState.Tie;
                 }
             }
+        }
+
+        void IAdversarialSinglePiece.Play(int index)
+        {
+            throw new NotImplementedException();
         }
     }
 }

@@ -49,21 +49,25 @@
         <member name="P:BoardGames.Games.TicTacToe.Turn">
             <summary>
             Gets a value indicating whether it is the first player's turn or not.
+            Inherited from IAdversarialSinglePice.
             </summary>
         </member>
         <member name="P:BoardGames.Games.TicTacToe.State">
             <summary>
             Gets the current state of the game.
+            Inherited from IAdversarialSinglePice.
             </summary>
         </member>
         <member name="P:BoardGames.Games.TicTacToe.History">
             <summary>
             Gets the history of the game, consisting of the move each player made and the resulting board.
+            Inherited from IAdversarialSinglePice.
             </summary>
         </member>
         <member name="P:BoardGames.Games.TicTacToe.Current">
             <summary>
             Gets the most recent board.
+            Inherited from IAdversarialSinglePice.
             </summary>
         </member>
         <member name="M:BoardGames.Games.TicTacToe.Play(System.Int32)">
