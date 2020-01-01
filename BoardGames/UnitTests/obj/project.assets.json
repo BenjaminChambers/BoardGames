@@ -5747,11 +5747,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\benja\\Source\\Repos\\BenjaminChambers\\BoardGames\\BoardGames\\UnitTests\\UnitTests.csproj",
+      "projectUniqueName": "C:\\Users\\benja\\source\\repos\\BenjaminChambers\\BoardGames\\BoardGames\\UnitTests\\UnitTests.csproj",
       "projectName": "UnitTests",
-      "projectPath": "C:\\Users\\benja\\Source\\Repos\\BenjaminChambers\\BoardGames\\BoardGames\\UnitTests\\UnitTests.csproj",
+      "projectPath": "C:\\Users\\benja\\source\\repos\\BenjaminChambers\\BoardGames\\BoardGames\\UnitTests\\UnitTests.csproj",
       "packagesPath": "C:\\Users\\benja\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\benja\\Source\\Repos\\BenjaminChambers\\BoardGames\\BoardGames\\UnitTests\\obj\\",
+      "outputPath": "C:\\Users\\benja\\source\\repos\\BenjaminChambers\\BoardGames\\BoardGames\\UnitTests\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\benja\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -5767,8 +5767,8 @@
       "frameworks": {
         "netcoreapp3.0": {
           "projectReferences": {
-            "C:\\Users\\benja\\Source\\Repos\\BenjaminChambers\\BoardGames\\BoardGames\\BoardGames\\LibBoardGames.csproj": {
-              "projectPath": "C:\\Users\\benja\\Source\\Repos\\BenjaminChambers\\BoardGames\\BoardGames\\BoardGames\\LibBoardGames.csproj"
+            "C:\\Users\\benja\\source\\repos\\BenjaminChambers\\BoardGames\\BoardGames\\BoardGames\\LibBoardGames.csproj": {
+              "projectPath": "C:\\Users\\benja\\source\\repos\\BenjaminChambers\\BoardGames\\BoardGames\\BoardGames\\LibBoardGames.csproj"
             }
           }
         }

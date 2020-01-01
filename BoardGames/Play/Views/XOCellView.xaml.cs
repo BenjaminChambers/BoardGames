@@ -20,11 +20,18 @@
     {
         private int index;
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="XOCellView"/> class.
+        /// </summary>
         public XOCellView()
         {
             this.InitializeComponent();
         }
 
+        /// <summary>
+        /// Gets or sets the index of the cell being represented by this control.
+        /// Index corresponds to the numbers on a 10-key.
+        /// </summary>
         public int Index
         {
             get => this.index;
@@ -39,6 +46,9 @@
             }
         }
 
+        /// <summary>
+        /// Gets or sets the <see cref="ICommand"/> used by the <see cref="Button"/>.
+        /// </summary>
         public ICommand Command
         {
             get => this.CellButton.Command;

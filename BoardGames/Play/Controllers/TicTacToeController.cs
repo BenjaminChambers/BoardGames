@@ -63,14 +63,21 @@
         public IReadOnlyList<BindingValue<Visibility>> EVisibility
             => this.eVisibility;
 
+        /// <summary>
+        /// Gets the state of the current game in progress.
+        /// </summary>
         public TwoPlayerGameState State
             => this.game.State;
 
-        public void Play(int Cell)
+        /// <summary>
+        /// Plays a move in the given cell.
+        /// </summary>
+        /// <param name="cell">The cell to play in, lining up with numbers on a 10-key.</param>
+        public void Play(int cell)
         {
             if (this.game.State == TwoPlayerGameState.InProgress)
             {
-                this.game.Play(Cell - 1);
+                this.game.Play(cell - 1);
                 this.UpdateValues();
             }
             else

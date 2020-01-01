@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\benja\\Source\\Repos\\BenjaminChambers\\BoardGames\\BoardGames\\BoardGames\\LibBoardGames.csproj": {}
+    "C:\\Users\\benja\\source\\repos\\BenjaminChambers\\BoardGames\\BoardGames\\BoardGames\\LibBoardGames.csproj": {}
   },
   "projects": {
-    "C:\\Users\\benja\\Source\\Repos\\BenjaminChambers\\BoardGames\\BoardGames\\BoardGames\\LibBoardGames.csproj": {
+    "C:\\Users\\benja\\source\\repos\\BenjaminChambers\\BoardGames\\BoardGames\\BoardGames\\LibBoardGames.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\benja\\Source\\Repos\\BenjaminChambers\\BoardGames\\BoardGames\\BoardGames\\LibBoardGames.csproj",
+        "projectUniqueName": "C:\\Users\\benja\\source\\repos\\BenjaminChambers\\BoardGames\\BoardGames\\BoardGames\\LibBoardGames.csproj",
         "projectName": "LibBoardGames",
-        "projectPath": "C:\\Users\\benja\\Source\\Repos\\BenjaminChambers\\BoardGames\\BoardGames\\BoardGames\\LibBoardGames.csproj",
+        "projectPath": "C:\\Users\\benja\\source\\repos\\BenjaminChambers\\BoardGames\\BoardGames\\BoardGames\\LibBoardGames.csproj",
         "packagesPath": "C:\\Users\\benja\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\benja\\Source\\Repos\\BenjaminChambers\\BoardGames\\BoardGames\\BoardGames\\obj\\",
+        "outputPath": "C:\\Users\\benja\\source\\repos\\BenjaminChambers\\BoardGames\\BoardGames\\BoardGames\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\benja\\AppData\\Roaming\\NuGet\\NuGet.Config",

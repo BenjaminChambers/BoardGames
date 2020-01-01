@@ -1,6 +1,5 @@
 ﻿namespace Play.Pages
 {
-    using BoardGames.Games;
     using System;
     using System.Collections.Generic;
     using System.Text;
@@ -13,6 +12,7 @@
     using System.Windows.Media.Imaging;
     using System.Windows.Navigation;
     using System.Windows.Shapes;
+    using BoardGames.Games;
 
     /// <summary>
     /// Interaction logic for TicTacToePage.xaml.
@@ -20,15 +20,17 @@
     public partial class TicTacToePage : Page
     {
         /// <summary>
+        /// The RoutedCommand used when clicking on cells.
+        /// </summary>
+        public static readonly RoutedUICommand Play = new RoutedUICommand();
+
+        /// <summary>
         /// Initializes a new instance of the <see cref="TicTacToePage"/> class.
         /// </summary>
         public TicTacToePage()
         {
             this.InitializeComponent();
         }
-
-        public static readonly RoutedUICommand Play = new RoutedUICommand();
-
 
         private void CommandBinding_CanExecute(object sender, CanExecuteRoutedEventArgs e)
         {
